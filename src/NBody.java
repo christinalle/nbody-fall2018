@@ -91,13 +91,12 @@ public class NBody {
 			for(int v = 0; v < bodies.length; v++) {
 				xforces[v] = bodies[v].calcNetForceExertedByX(bodies);
 				yforces[v] = bodies[v].calcNetForceExertedByY(bodies);
+				bodies[v].update(dt, xforces[v], yforces[v]);
 			}
-			
+		
 			// TODO: loop over all bodies, calculate
 			// net forces and store in xforces and yforces
-			for(int y = 0; y < bodies.length; y++) {
-				bodies[y].update(dt, xforces[y], yforces[y]);
-			}
+
 			// TODO: loop over all bodies and call update
 			// with dt and corresponding xforces, yforces values
 			
